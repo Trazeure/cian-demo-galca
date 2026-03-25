@@ -2,8 +2,9 @@
 
 import {
   FileText, ListChecks, BookOpen, Library, ScrollText,
-  Calendar, GraduationCap, Eye, Wrench, BarChart3,
-  Landmark, Building2, Gavel, Mail, LucideProps,
+  Calendar, GraduationCap, ClipboardList, Wrench, Hammer,
+  LayoutDashboard, Activity, Landmark, Building2, Target,
+  Network, Gavel, ClipboardCheck, Share2, Mail, LucideProps,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 
@@ -15,12 +16,18 @@ const iconMap: Record<string, React.ComponentType<LucideProps>> = {
   ScrollText,
   Calendar,
   GraduationCap,
-  Eye,
+  ClipboardList,
   Wrench,
-  BarChart3,
+  Hammer,
+  LayoutDashboard,
+  Activity,
   Landmark,
   Building2,
+  Target,
+  Network,
   Gavel,
+  ClipboardCheck,
+  Share2,
   Mail,
 };
 

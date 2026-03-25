@@ -51,11 +51,11 @@ export const MENU_SECTIONS: MenuSection[] = [
     items: [
       { id: "programacion", icon: "Calendar", label: "Programación de servicios" },
       { id: "capacitacion", icon: "GraduationCap", label: "Servicios de capacitación" },
-      { id: "gestion", icon: "Eye", label: "Servicios de gestión" },
+      { id: "gestion", icon: "ClipboardList", label: "Servicios de gestión" },
       { id: "tecnicos", icon: "Wrench", label: "Servicios técnicos" },
-      { id: "mantenimiento", icon: "BarChart3", label: "Mantenimiento" },
-      { id: "sistema-gestion", icon: "BarChart3", label: "Sistema de gestión" },
-      { id: "diagnostico", icon: "BarChart3", label: "Herramienta de diagnóstico" },
+      { id: "mantenimiento", icon: "Hammer", label: "Mantenimiento" },
+      { id: "sistema-gestion", icon: "LayoutDashboard", label: "Sistema de gestión" },
+      { id: "diagnostico", icon: "Activity", label: "Herramienta de diagnóstico" },
     ],
   },
   {
@@ -65,8 +65,8 @@ export const MENU_SECTIONS: MenuSection[] = [
     items: [
       { id: "politicas-calidad", icon: "Landmark", label: "Políticas de calidad" },
       { id: "oficina-verde", icon: "Building2", label: "Políticas de oficina verde" },
-      { id: "mision-vision", icon: "Eye", label: "Misión y visión" },
-      { id: "organigrama", icon: "BarChart3", label: "Organigrama" },
+      { id: "mision-vision", icon: "Target", label: "Misión y visión" },
+      { id: "organigrama", icon: "Network", label: "Organigrama" },
       { id: "leyes", icon: "Gavel", label: "Leyes y normas" },
     ],
   },
@@ -75,8 +75,8 @@ export const MENU_SECTIONS: MenuSection[] = [
     title: "Comunicación y Resultados",
     color: COLORS.c2Orange,
     items: [
-      { id: "reporte-seguimiento", icon: "Gavel", label: "Reporte de seguimiento de servicios", navigateTo: "/process" },
-      { id: "diagrama-comunicacion", icon: "Gavel", label: "Diagrama de comunicación" },
+      { id: "reporte-seguimiento", icon: "ClipboardCheck", label: "Reporte de seguimiento de servicios", navigateTo: "/process" },
+      { id: "diagrama-comunicacion", icon: "Share2", label: "Diagrama de comunicación" },
       { id: "correos", icon: "Mail", label: "Envía correos" },
     ],
   },
