@@ -8,9 +8,10 @@ interface SectionGridProps {
   color: string;
   items: MenuItem[];
   searchQuery: string;
+  onCardClick?: (msg: string) => void;
 }
 
-export default function SectionGrid({ title, color, items, searchQuery }: SectionGridProps) {
+export default function SectionGrid({ title, color, items, searchQuery, onCardClick }: SectionGridProps) {
   const filtered = searchQuery
     ? items.filter((item) =>
         item.label.toLowerCase().includes(searchQuery.toLowerCase())
@@ -20,9 +21,9 @@ export default function SectionGrid({ title, color, items, searchQuery }: Sectio
   if (filtered.length === 0) return null;
 
   return (
-    <div className="flex flex-col gap-5 w-full">
-      <div className="inline-flex flex-col pb-4" style={{ borderBottom: `3px solid #008100` }}>
-        <span className="font-bold text-[#2d3748] whitespace-nowrap" style={{ fontSize: "23px" }}>
+    <div className="flex flex-col gap-4 w-full">
+      <div className="inline-flex pb-3" style={{ borderBottom: "3px solid #008100" }}>
+        <span className="font-bold text-[#2d3748] text-[21px] leading-tight">
           {title}
         </span>
       </div>
@@ -34,6 +35,7 @@ export default function SectionGrid({ title, color, items, searchQuery }: Sectio
             label={item.label}
             borderColor={color}
             navigateTo={item.navigateTo}
+            onToast={onCardClick}
           />
         ))}
       </div>
