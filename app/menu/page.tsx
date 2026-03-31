@@ -48,32 +48,33 @@ export default function MenuPage() {
       </header>
 
       {/* ── BANNER de bienvenida ── */}
-      <div className="bg-white border-b border-[#e5e7eb] px-5 md:px-8 py-5">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div>
-            <h1 className="text-[#111827] font-bold text-xl leading-tight">
+      <div className="bg-white border-b border-[#e5e7eb] px-5 md:px-8 py-4 md:py-5">
+        <div className="flex items-center justify-between gap-3">
+          <div className="min-w-0">
+            <h1 className="text-[#111827] font-bold text-lg md:text-xl leading-tight truncate">
               Bienvenido, <span className="text-[#008100]">Usuario</span> 👋
             </h1>
-            <p className="text-[#6b7280] text-sm mt-0.5">Sistema de Capacitación y Procesos Administrativos</p>
+            <p className="text-[#6b7280] text-xs md:text-sm mt-0.5 hidden sm:block">Sistema de Capacitación y Procesos Administrativos</p>
           </div>
-          <div className="flex items-center gap-2 flex-shrink-0">
-            <div className="hidden sm:flex items-center gap-4 mr-2">
+          <div className="flex items-center gap-2 md:gap-3 flex-shrink-0">
+            <div className="hidden md:flex items-center gap-3 mr-1">
               <div className="text-center">
-                <p className="text-[#008100] font-bold text-lg leading-none">{totalModules}</p>
+                <p className="text-[#008100] font-bold text-base leading-none">{totalModules}</p>
                 <p className="text-[#9ca3af] text-[10px] mt-0.5">Módulos</p>
               </div>
-              <div className="w-px h-8 bg-[#e5e7eb]" />
+              <div className="w-px h-7 bg-[#e5e7eb]" />
               <div className="text-center">
-                <p className="text-[#f59e0b] font-bold text-lg leading-none">{MENU_SECTIONS.length}</p>
+                <p className="text-[#f59e0b] font-bold text-base leading-none">{MENU_SECTIONS.length}</p>
                 <p className="text-[#9ca3af] text-[10px] mt-0.5">Secciones</p>
               </div>
             </div>
             <button
               onClick={() => router.push("/process")}
-              className="flex items-center gap-2 bg-[#008100] text-white text-sm font-semibold px-4 py-2.5 rounded-lg hover:bg-[#005900] active:scale-[0.97] transition-all shadow-sm"
+              className="flex items-center gap-1.5 bg-[#008100] text-white text-xs md:text-sm font-semibold px-3 md:px-4 py-2 md:py-2.5 rounded-lg hover:bg-[#005900] active:scale-[0.97] transition-all shadow-sm"
             >
-              <FilePlus size={16} strokeWidth={1.8} />
-              Nueva captura
+              <FilePlus size={15} strokeWidth={1.8} />
+              <span className="hidden xs:inline">Nueva captura</span>
+              <span className="xs:hidden">Captura</span>
             </button>
           </div>
         </div>
@@ -129,7 +130,7 @@ export default function MenuPage() {
               <div className="w-1 h-7 rounded-full bg-[#374151] flex-shrink-0" />
               <h2 className="font-bold text-[#111827] text-[17px]">Acciones Rápidas</h2>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {[
                 { label: "Nueva captura", icon: FilePlus, color: "#008100", textColor: "white", action: () => router.push("/process") },
                 { label: "Ver reportes", icon: BarChart2, color: "#f8f9fb", textColor: "#374151", border: true, action: () => showToast("Módulo de reportes en desarrollo") },
