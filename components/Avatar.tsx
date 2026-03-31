@@ -1,22 +1,28 @@
 "use client";
 
+import { ChevronDown } from "lucide-react";
+
 interface AvatarProps {
   name?: string;
   role?: string;
+  onClick?: () => void;
 }
 
-export default function Avatar({ name = "Usuario", role = "Rol" }: AvatarProps) {
+export default function Avatar({ name = "Usuario", role = "Administrativo", onClick }: AvatarProps) {
   const initial = name.charAt(0).toUpperCase();
-
   return (
-    <div className="flex items-center gap-3 px-5 py-2.5 rounded-[30px] bg-white/10 backdrop-blur-sm">
-      <div className="w-10 h-10 rounded-full bg-[#f4e04d] flex items-center justify-center flex-shrink-0">
-        <span className="text-white font-semibold text-base leading-none">{initial}</span>
+    <button
+      onClick={onClick}
+      className="flex items-center gap-2.5 px-3 py-2 rounded-xl border border-[#e2e8f0] bg-white hover:bg-[#f8fafc] hover:border-[#008100]/30 transition-all duration-150 group cursor-pointer"
+    >
+      <div className="w-8 h-8 rounded-full bg-[#008100] flex items-center justify-center flex-shrink-0 shadow-sm">
+        <span className="text-white font-bold text-sm leading-none">{initial}</span>
       </div>
-      <div className="flex flex-col items-start">
-        <span className="text-white font-bold text-[15px] leading-tight whitespace-nowrap">{name}</span>
-        <span className="text-white/80 text-xs leading-tight whitespace-nowrap">{role}</span>
+      <div className="flex flex-col items-start leading-none">
+        <span className="text-[#1e1e1e] font-semibold text-[13px] whitespace-nowrap">{name}</span>
+        <span className="text-[#6b7280] text-[11px] whitespace-nowrap mt-0.5">{role}</span>
       </div>
-    </div>
+      <ChevronDown size={14} className="text-[#9ca3af] group-hover:text-[#008100] transition-colors ml-1" />
+    </button>
   );
 }
